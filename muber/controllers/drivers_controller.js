@@ -1,4 +1,4 @@
-
+const Driver = require('../models/driver')
 
 
 module.exports = {
@@ -7,10 +7,12 @@ module.exports = {
 		res.send({hi: 'there'})
 	},
 
+	create(req,res,next){
+		const driverProps = req.body 
 
-	create(req,res){
-		console.log(req.body)
-		res.send({hi: 'there1'})
+		Driver.create(driverProps).
+			then(driver=>res.send(driver))
+			.catch(next)
 	}
 
 }

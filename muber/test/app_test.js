@@ -3,9 +3,11 @@ const request = require("supertest")
 const app = require('../app')
 
 
+
+
 describe("app get listening", ()=> {
 
-	it("handles a GET request to /api", (done)=>{
+	it("GET request to /api", (done)=>{
 		request(app)
 		.get('/api')
 		.end((err, response) => {
@@ -14,4 +16,6 @@ describe("app get listening", ()=> {
 			done()
 		})
 	})
+
+
 })
